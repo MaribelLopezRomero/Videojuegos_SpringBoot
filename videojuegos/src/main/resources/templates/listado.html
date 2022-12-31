@@ -26,78 +26,20 @@ Thymepate es una libreria JAVA que implemnta html dinamicos. Util para ir render
 
         <div class="container mt-4 vj-destacados">
             <div class="row">
-                <div class="col-md-3 mb-4">
+                <div th:each="juego: ${videojuego} "class="col-md-3 mb-4"> <!--videojuego es lo que nos viene de model y juego el nombre que ponemos a cada elemento de la lista -->
+
                     <div class="card">
-                        <img src="https://cdn.gbposters.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/p/fp4825-borderlands-3-cover.jpg" class="card-img-top" alt="...">
+                        <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Borderlands 3</h5>
-                            <p class="card-text">¡Vuelve el padre de los shooter-looter, con tropecientas mil armas y una aventura caótica!</p>
+                            <h5 th:text="${juego.nombre}" class="card-title">Borderlands 3</h5>
+                            <p th:text="${juego.descripcion}" class="card-text"></p>
                         </div>
                         <div class="card-footer text-muted">
                             <a href="#" class="btn btn-primary">Ver detalles</a>
                         </div>                        
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card ">
-                        <img src="https://media.playstation.com/is/image/SCEA/control-poster-01-ps4-us-11sep19?$native_nt$" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Control</h5>
-                            <p class="card-text">Tras la invasión de una agencia secreta de Nueva York por parte de una amenaza de otro mundo, te conviertes en la nueva directora que deberá luchar para recuperar Control.</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class="btn btn-primary">Ver detalles</a>
-                        </div>                                        
-                    </div>                  
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card ">
-                        <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/ES/es/999/EP5426-CUSA13893_00-2222444466669999/1568624921000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Subnautica</h5>
-                            <p class="card-text">Un juego de aventuras submarinas ambientado en un mundo oceánico alienígena. ¡Te espera un mundo abierto enorme lleno de maravillas y peligros! </p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class="btn btn-primary">Ver detalles</a>
-                        </div>                    
-                    </div>                
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card ">
-                        <img src="https://www.mobygames.com/images/covers/l/323028-firewatch-playstation-4-front-cover.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Firewatch</h5>
-                            <p class="card-text">Firewatch es un juego de misterio en primera persona para un jugador que se desarrolla en la selva de Wyoming</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class="btn btn-primary">Ver detalles</a>
-                        </div>                                        
-                    </div>                   
-                </div>                
-                <div class="col-md-3">
-                    <div class="card ">
-                        <img src="https://www.mobygames.com/images/covers/l/323028-firewatch-playstation-4-front-cover.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Firewatch</h5>
-                            <p class="card-text">Firewatch es un juego de misterio en primera persona para un jugador que se desarrolla en la selva de Wyoming</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class="btn btn-primary">Ver detalles</a>
-                        </div>                                        
-                    </div>                   
-                </div>                
-                <div class="col-md-3">
-                    <div class="card ">
-                        <img src="https://www.mobygames.com/images/covers/l/323028-firewatch-playstation-4-front-cover.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Firewatch</h5>
-                            <p class="card-text">Firewatch es un juego de misterio en primera persona para un jugador que se desarrolla en la selva de Wyoming</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            <a href="#" class="btn btn-primary">Ver detalles</a>
-                        </div>                                        
-                    </div>                   
-                </div>                
+                         
             </div>
         </div>
 
