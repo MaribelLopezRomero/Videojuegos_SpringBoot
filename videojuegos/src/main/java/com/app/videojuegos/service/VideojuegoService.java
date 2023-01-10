@@ -20,7 +20,14 @@ public class VideojuegoService {
     //Ahora ya podemos usar los metodos de la interfaz de jparepository que conecta directamente con la bbdd
     public List<Videojuego> buscarDestacados() {
 
-        return videojuegorepository.findAll();
+       // return videojuegorepository.findAll;
+       return videojuegorepository.buscarTodos();
+    }
+    
+    public List <Videojuego> buscarPorDistribuidor(int distribuidorId){
+    
+        return videojuegorepository.buscarPorDistribuidor(distribuidorId);
+    
     }
 
 }

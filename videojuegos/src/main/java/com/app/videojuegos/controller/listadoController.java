@@ -35,5 +35,22 @@ public class listadoController {
        
         return "listado";
     }
+    
+    @RequestMapping("/VideojuegosPorDistribuidor")
+    
+    //pasamos por parametro, los parametros de la URL (se tiene que llamar igual)
+    
+    public String listarVideojuegosPorDistribuidor(int distribuidorId, Model model){
+        
+        //creamos la lista de vj por distribuidor que hemos buscado con service
+        List <Videojuego> juegos = videojuegoService.buscarPorDistribuidor(distribuidorId); //es el parametro de la url
+
+        model.addAttribute("videojuego", juegos);
+        
+        return "listado";
+                
+               
+      
+    }
 
 }

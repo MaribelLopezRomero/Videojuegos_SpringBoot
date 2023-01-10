@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 //Clase de DOMINIO
 @Entity
@@ -16,7 +17,11 @@ public class Videojuego {
     private String nombre;
     private String descripcion;
     private String imagenUrl;
-  
+    
+    @ManyToOne
+    private Distribuidor distribuidor;
+
+
 
     public Integer getId() {
         return id;
@@ -32,6 +37,10 @@ public class Videojuego {
 
     public String getImagenUrl() {
         return imagenUrl;
+    }
+    
+       public Distribuidor getDistribuidor() {
+        return distribuidor;
     }
 
     public void setId(Integer id) {
@@ -49,5 +58,11 @@ public class Videojuego {
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
     }
+    
+        public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
+    }
+    
+    
 
 }

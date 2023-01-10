@@ -18,7 +18,7 @@ Thymepate es una libreria JAVA que implemnta html dinamicos. Util para ir render
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" th:href="@{/}">
                 <img src="img/logo.png" width="30" height="30" alt="">
                 Tienda VJ
             </a>
@@ -32,6 +32,8 @@ Thymepate es una libreria JAVA que implemnta html dinamicos. Util para ir render
                         <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 th:text="${juego.nombre}" class="card-title">Borderlands 3</h5>
+                            <a th:href="@{/VideojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}"  class="badge badge-pill badge-warning" th:text="${juego.distribuidor.nombre}"></a>
+          
                             <p th:text="${juego.descripcion}" class="card-text"></p>
                         </div>
                         <div class="card-footer text-muted">
