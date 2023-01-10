@@ -31,7 +31,7 @@ public class listadoController {
         //Añadimos un atributo y el objeto al modelo
         model.addAttribute("videojuego", destacados);
         
-        System.out.println("sdf");      
+        System.out.println("sdf");
        
         return "listado";
     }
