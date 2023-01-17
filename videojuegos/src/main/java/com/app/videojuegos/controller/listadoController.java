@@ -1,12 +1,12 @@
 package com.app.videojuegos.controller;
 
-import ch.qos.logback.core.CoreConstants;
 import com.app.videojuegos.domain.Videojuego;
 import com.app.videojuegos.service.VideojuegoService;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller //atiende peticiones del navegador
 public class listadoController {
@@ -31,7 +31,6 @@ public class listadoController {
         //Añadimos un atributo y el objeto al modelo
         model.addAttribute("videojuego", destacados);
         
-        System.out.println("sdf");
        
         return "listado";
     }
@@ -51,6 +50,20 @@ public class listadoController {
                 
                
       
+    }
+    
+    @RequestMapping("/buscar")
+    //podemos personalizar los parametros con @Requestparam
+    
+    public String buscar (@RequestParam("q") String Consulta, Model model){
+        
+        //creamos la lista de vj por busqueda que hemos filtrado con service
+        List <Videojuego> busqueda = videojuegoService.buscar(Consulta); //valor del parametro de la URL
+        
+        model.addAttribute("videojuego", busqueda);
+        
+        return "listado";
+    
     }
 
 }

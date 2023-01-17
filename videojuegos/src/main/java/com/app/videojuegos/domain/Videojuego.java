@@ -59,9 +59,16 @@ public class Videojuego {
         this.imagenUrl = imagenUrl;
     }
     
-        public void setDistribuidor(Distribuidor distribuidor) {
+    public void setDistribuidor(Distribuidor distribuidor) {
         this.distribuidor = distribuidor;
     }
+
+    @Override
+    public String toString() {
+        return "Videojuego{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagenUrl=" + imagenUrl + ", distribuidor=" + distribuidor.getId() + '}';
+    }
+    
+    
     
     
 
