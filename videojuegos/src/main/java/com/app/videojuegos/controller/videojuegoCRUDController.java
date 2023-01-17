@@ -15,10 +15,14 @@ public class videojuegoCRUDController {
 
     //Atributo final de tipo service
     private final DistribuidorService distribuidorService;
+    
+     private final VideojuegoService videojuegoService;
 
-    public videojuegoCRUDController(DistribuidorService distribuidorService) {
+    public videojuegoCRUDController(DistribuidorService distribuidorService, VideojuegoService videojuegoService) {
         this.distribuidorService = distribuidorService;
+        this.videojuegoService = videojuegoService;
     }
+
 
     @RequestMapping("/videojuegos/crear")
     public String mostrarFormulario(Model model) {
@@ -38,8 +42,9 @@ public class videojuegoCRUDController {
     @PostMapping("/videojuegos/guardar")
     public String guardarVideojuego(Videojuego videojuego) {
 
-        //Al hacer el submit el fomulario mandara un objeto de videojuego donde los valores de los atributos seran los introducidos en los input (value)
-        System.out.println(videojuego);
+        //Al hacer el submit el fomulario mandara al controller un objeto de videojuego donde los valores de los atributos seran los introducidos en los input (value)
+        
+        videojuegoService.guardar(videojuego);
 
         return "redirect:/"; //Nos redirige al hacer el submit a la url aqui indicada
     }
