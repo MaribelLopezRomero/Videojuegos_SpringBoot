@@ -3,7 +3,9 @@
 ![index html](https://user-images.githubusercontent.com/70584024/213440581-16906b5d-d158-4f5b-90fc-bcc81b6a4953.png)
 
 
-Aplicacion web hecha con Java, SpringBoot y SQL, que **muestra los videojuegos**. **Buscador** de los titulos por nombre.
+Aplicacion web hecha con Java, SpringBoot y SQL, que **muestra los videojuegos**. 
+
+**Buscador** de los titulos por nombre.
 
 ![buscar](https://user-images.githubusercontent.com/70584024/213440837-c603a1a9-0e4c-4596-b950-03ee2042b33b.png)
 
